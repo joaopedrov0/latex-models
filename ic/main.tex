@@ -1,63 +1,4 @@
-% arara: biber
-
-\documentclass[12pt]{article}
-
-\usepackage[a4paper, top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
-\usepackage{setspace}
-\setstretch{1.5}
-\usepackage{titlesec}
-\usepackage{xcolor}
-\usepackage{enumitem}
-\usepackage{fontspec}
-\setmainfont{Arial}
-\usepackage[alf]{abntex2cite}
-\pagestyle{empty}
-
-
-
-\definecolor{sectionBg}{RGB}{204, 204, 204}
-
-
-\newcommand{\sectionBox}[1]{
-    \noindent
-
-    \colorbox{sectionBg}{\parbox{\dimexpr\linewidth-4\fboxsep\relax}{\MakeUppercase{#1}}}
-    
-}
-
-\newcommand{\customTitle}[1]{
-    \begin{center}
-        \vspace*{0cm}
-        {\bfseries\normalsize\MakeUppercase{#1}}
-        \vspace{0cm}
-    \end{center}
-}
-
-\titleformat{\title}
-    [block]
-    {\bfseries\normalsize\centering}
-    {}
-    {0pt}
-    {\MakeUppercase}
-
-\titleformat{\section}      % comando que altera o formato da seção
-    [block]                 % comando que altera o formato da seção
-    {\bfseries\normalsize}  % formatação do texto (negrito + tamanho)
-    {}                      % formato do número (vazio = sem número)
-    {0pt}                   % espaçamento entre o número e o título
-    {
-        \sectionBox
-    }
-    
-
-\titleformat{\subsection}
-    [runin]
-    {\bfseries\normalsize\itshape}
-    {}
-    {0pt}
-    {}
-    [\normalfont{:}\\]
-
+\documentclass[12pt]{ic-final-model}
 
 \begin{document}
 
@@ -89,6 +30,7 @@ espaçamento 1,5, contendo:
 
 \noindent
 \section{Resumo}
+
 Resumir o projeto de pesquisa.
 lorem ipsum \#teste
 lorem
@@ -126,8 +68,8 @@ Expor os resultados alcançados, em conformidade com o Plano de Trabalho
 \section{Referências Bibliográficas}
 
 % Use a BibTeX style and point to the .bib file (without the .bib extension).
-% Compile with xelatex -> bibtex -> xelatex x2
-\bibliographystyle{plain}
+
+\bibliographystyle{abbrv}
 \bibliography{referencias}
 
 
