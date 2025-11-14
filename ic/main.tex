@@ -1,0 +1,146 @@
+% arara: biber
+
+\documentclass[12pt]{article}
+
+\usepackage[a4paper, top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.5}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fontspec}
+\setmainfont{Arial}
+\usepackage[alf]{abntex2cite}
+\pagestyle{empty}
+
+
+
+\definecolor{sectionBg}{RGB}{204, 204, 204}
+
+
+\newcommand{\sectionBox}[1]{
+    \noindent
+
+    \colorbox{sectionBg}{\parbox{\dimexpr\linewidth-4\fboxsep\relax}{\MakeUppercase{#1}}}
+    
+}
+
+\newcommand{\customTitle}[1]{
+    \begin{center}
+        \vspace*{0cm}
+        {\bfseries\normalsize\MakeUppercase{#1}}
+        \vspace{0cm}
+    \end{center}
+}
+
+\titleformat{\title}
+    [block]
+    {\bfseries\normalsize\centering}
+    {}
+    {0pt}
+    {\MakeUppercase}
+
+\titleformat{\section}      % comando que altera o formato da seção
+    [block]                 % comando que altera o formato da seção
+    {\bfseries\normalsize}  % formatação do texto (negrito + tamanho)
+    {}                      % formato do número (vazio = sem número)
+    {0pt}                   % espaçamento entre o número e o título
+    {
+        \sectionBox
+    }
+    
+
+\titleformat{\subsection}
+    [runin]
+    {\bfseries\normalsize\itshape}
+    {}
+    {0pt}
+    {}
+    [\normalfont{:}\\]
+
+
+\begin{document}
+
+\customTitle{Relatório Final - IFSP}
+
+O Relatório Final deverá conter no máximo 25 páginas, em tamanho A4, fonte Arial, corpo 12, 
+espaçamento 1,5, contendo:
+
+\begin{enumerate}[label=\alph*)]
+
+    \item Título do relatório
+
+    \item Nome, telefones e e-mail do bolsista;
+
+    \item Nome, endereço, telefone e e-mail da Instituição de vínculo da bolsa – utilizar:
+
+    \begin{quote}\itshape
+        Instituto Federal de Educação, Ciência e Tecnologia de São Paulo-IFSP\\[2pt]
+        Rua Pedro Vicente, 625 – Canindé – São Paulo-SP\\[2pt]
+        CEP:01109-010\\[2pt]
+        Telefone: 11-3775-4570\\[2pt]
+        e-mail: prp@ifsp.edu.br,
+    \end{quote}
+
+    \item Nome, telefones, e-mail do professor orientador;
+\end{enumerate}
+
+\vspace{1em}
+
+\noindent
+\section{Resumo}
+Resumir o projeto de pesquisa.
+lorem ipsum \#teste
+lorem
+
+
+\section{Apresentação(Introdução, Justificativa e Objetivos)}
+
+\subsection{Introdução}
+
+Este é um parágrafo normal de texto.  
+Você pode quebrar linhas usando uma linha em branco.
+
+Exemplo de citação \cite{vaswani2017attention} \cite{abacate}
+
+\subsection{Justificativa}
+
+Apresentar a justificativa para o projeto de pesquisa.
+
+\subsection{Objetivo}
+
+Apresentar a justificativa para o projeto de pesquisa.
+
+\section{Desenvolvimento (Metodologia e Análise)}
+
+Descrever os métodos utilizados no desenvolvimento do projeto de pesquisa, e análise dos resultados obtidos.
+
+asdadasd
+
+Você pode usar \textbf{negrito}, \textit{itálico} e \underline{sublinhado}.
+
+\section{Conclusão (Resultados da pesquisa)}
+
+Expor os resultados alcançados, em conformidade com o Plano de Trabalho
+
+\section{Referências Bibliográficas}
+
+% Use a BibTeX style and point to the .bib file (without the .bib extension).
+% Compile with xelatex -> bibtex -> xelatex x2
+\bibliographystyle{plain}
+\bibliography{referencias}
+
+
+\vspace{2cm}
+
+\begingroup
+
+\noindent{Assinatura do orientador: \hrulefill}
+
+\vspace{1cm}
+
+\noindent{Assinatura do bolsista: \hrulefill}
+
+\endgroup
+
+\end{document}
