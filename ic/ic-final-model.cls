@@ -13,8 +13,10 @@
 \RequirePackage{xcolor}
 \RequirePackage{enumitem}
 \RequirePackage{helvet}
-\RequirePackage[brazil]{babel}
+\RequirePackage[brazilian]{babel}
 \RequirePackage[alf]{abntex2cite}
+\RequirePackage{graphicx}
+\RequirePackage{indentfirst}
 
 % ----------------------------------------------------------------------
 % Fonte Arial
@@ -37,7 +39,7 @@
 \newcommand{\sectionBox}[1]{
     \noindent
     \colorbox{sectionBg}{
-        \parbox{\dimexpr\linewidth-4\fboxsep\relax}{\MakeUppercase{#1}}
+        \parbox{\dimexpr\linewidth-2\fboxsep\relax}{\MakeUppercase{#1}}
     }
 }
 
@@ -59,6 +61,7 @@
     {}
     {0pt}
     {\sectionBox}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
 
 % Subsection estilo "run-in" + itálico + dois pontos
 \titleformat{\subsection}
